@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayProjectAPI", "HolidayProjectAPI\HolidayProjectAPI.csproj", "{3E48F21B-77B9-47CB-AACC-CB69D50F12CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HolidayProjectAPI", "HolidayProjectAPI\HolidayProjectAPI.csproj", "{3E48F21B-77B9-47CB-AACC-CB69D50F12CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolidayProjectApi.Tests", "HolidayProjectApi.Tests\HolidayProjectApi.Tests.csproj", "{A39D247A-1995-4FF6-9ADB-EC8B43BEBAA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{3E48F21B-77B9-47CB-AACC-CB69D50F12CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E48F21B-77B9-47CB-AACC-CB69D50F12CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E48F21B-77B9-47CB-AACC-CB69D50F12CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A39D247A-1995-4FF6-9ADB-EC8B43BEBAA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A39D247A-1995-4FF6-9ADB-EC8B43BEBAA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A39D247A-1995-4FF6-9ADB-EC8B43BEBAA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A39D247A-1995-4FF6-9ADB-EC8B43BEBAA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

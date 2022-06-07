@@ -5,7 +5,7 @@ namespace HolidayProjectAPI.Repositories
 {
     public abstract class BaseRepository<TModel> : IBaseRepository<TModel>
     {
-        private const string connectionString = @"Data Source=C:\Users\clayh\Desktop\HolidayProject\HolidayProject.db";
+        private string connectionString = @"Data Source={AppDir}Database\HolidayProject.db";
         public virtual string Select { get { return ""; } }
 
         public abstract TModel CreateModel(SqliteDataReader reader);
@@ -23,6 +23,7 @@ namespace HolidayProjectAPI.Repositories
 
         public async Task<TModel> Get(object[] keys)
         {
+            connectionString = connectionString.Replace("{AppDir}", AppDomain.CurrentDomain.BaseDirectory);
             using (SqliteConnection connection = new SqliteConnection(connectionString))
             {
                 using (SqliteCommand command = connection.CreateCommand())

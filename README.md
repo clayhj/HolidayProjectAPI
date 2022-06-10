@@ -21,6 +21,15 @@ This calls [GetHolidayByYear](https://github.com/clayhj/HolidayProjectAPI/blob/1
 which accepts a string year in a four digit format, ex. 2021, and returns all holidays in the given year in a JSON string array format. If a matching year is not found then
 it will return an empty array.  
   
+**Database Schema**  
+  
+- HolidayProject
+  - USFederalHolidays
+    - Name TEXT
+    - Description TEXT
+    - Date TEXT
+    - IsFloatingDate INTEGER
+  
 **Unit Testing**  
   
 Unit testing can be done in Visual Studio by clicking Test > Run All Tests. The tests assert that the API calls return ok and that they return expected data.
@@ -54,6 +63,6 @@ create a SqLite database and use it in my API, and then how to include it in my 
   
 **Enhancements**  
   
-If I had more time to work on this project I would spend it adding another API call so I could use to show the use of a custom method in my HolidayRepository/Service since
-currently I'm using the inherited Get and GetMany methods. I could add a method to get holiday by name for example. Another enhancement I would have liked to do would be to create
+If I had more time to work on this project I would spend it adding more API calls so I could use them to show the use of a custom method in my HolidayRepository/Service since
+currently I'm using the inherited Get and GetMany methods. I could add a method to get holiday by name for example. Also I could add a POST method to add new holidays to the database. Another enhancement I would have liked to do would be to create
 some kind of front-end which could send the API call and display the results. That would also show how the inputs could be handled before being sent to the API so no bad inputs get sent.

@@ -16,16 +16,28 @@ namespace HolidayProjectAPI.Repositories
             IsFloatingDate
         }
 
-        public override string Select =>
+        public override string SelectSingleRecord =>
             @"SELECT Name, IFNULL(Description, ''), Date, IsFloatingDate 
                 FROM USFederalHolidays WHERE Date = Date(@Date)";
+
+        public override string SelectManyRecords =>
+            @"SELECT Name, IFNULL(Description, ''), Date, IsFloatingDate
+                FROM USFederalHolidays WHERE strftime('%Y', Date) = @Year";
 
         public override void InitializeGetCommand(SqliteCommand command, object[] keys)
         {
             command.CommandType = CommandType.Text;
-            command.CommandText = Select;
+            command.CommandText = SelectSingleRecord;
 
             command.Parameters.AddWithValue("@Date", keys[0]);
+        }
+
+        public override void InitializeGetManyCommand(SqliteCommand command, object[] keys)
+        {
+            command.CommandType = CommandType.Text;
+            command.CommandText = SelectManyRecords;
+
+            command.Parameters.AddWithValue("@Year", keys[0]);
         }
 
         public override Holiday CreateModel(SqliteDataReader reader)

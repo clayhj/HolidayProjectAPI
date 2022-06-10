@@ -45,12 +45,28 @@ namespace HolidayProjectAPI.Controllers
             }
         }
 
-        //[HttpGet]
-        //[Route("annualholidays")]
-        //public IActionResult GetHoliday2(string year)
-        //{
-        //    string json = JsonConvert.SerializeObject();
-        //    return Ok(json);
-        //}
+        /// <summary>
+        /// Returns all holidays in a given year
+        /// </summary>
+        /// <param name="year"></param>
+        /// <returns>Enumeration of Holidays<see cref="Holiday"/></returns>
+        [HttpGet]
+        [Route("year")]
+        public async Task<IActionResult> GetHolidaysByYear(string year)
+        {
+
+            try
+            {
+                _logger.LogInformation("GetHolidayByYear start: {0}", year);
+                IEnumerable<Holiday> results = await _holiday.GetMany(new object[] { year });
+                string json = JsonConvert.SerializeObject(results);
+                return Ok(json);
+            }
+            catch (Exception e)
+            {
+                _logger.LogError("GetHolidaysByYear: " + e.Message);
+                return StatusCode((int)HttpStatusCode.InternalServerError);
+            }
+        }
     }
 }

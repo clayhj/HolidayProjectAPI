@@ -18,5 +18,11 @@ namespace HolidayProjectAPI.Services
             return result;
         }
 
+        public override async Task<IEnumerable<Holiday>> GetMany(object[] keys)
+        {
+            IEnumerable<Holiday> result = await _repository.GetMany(keys);
+            return result;
+        }
+
     }
 }

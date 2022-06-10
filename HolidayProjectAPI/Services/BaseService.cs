@@ -17,10 +17,10 @@ namespace HolidayProjectAPI.Services
             return result;
         }
 
-        //public virtual async Task<TModel> GetMany(object[] keys)
-        //{
-        //    var result = await _repository.Get(keys);
-        //    return result;
-        //}
+        public virtual async Task<IEnumerable<TModel>> GetMany(object[] keys)
+        {
+            var result = await _repository.GetMany(keys);
+            return result;
+        }
     }
 }

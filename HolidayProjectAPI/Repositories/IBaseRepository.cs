@@ -6,8 +6,9 @@ namespace HolidayProjectAPI.Repositories
     {
         TModel CreateModel(SqliteDataReader reader);
         void InitializeGetCommand(SqliteCommand command, object[] keys);
-        //void InitializeGetManyCommand(SqliteCommand command, object[] keys);
+        void InitializeGetManyCommand(SqliteCommand command, object[] keys);
+
         Task<TModel> Get(object[] keys);
-        //Task<IEnumerable<TModel>> GetMany(object[] keys);
+        Task<IEnumerable<TModel>> GetMany(object[] keys);
     }
 }

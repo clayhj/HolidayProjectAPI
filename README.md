@@ -6,7 +6,8 @@ A simple API which returns holiday data
 - With the project open in Visual Studio click Build > Build Solution.
 - With a successful build click Debug > Start Debugging. This will open an instance of Swagger allowing you to run the api calls.
 - With Swagger open, click the call you wish to run then click "Try it out".
-- Input the date or year in the correct format as explained below
+- Input the date or year in the correct format as explained in the Endpoints section below.
+- Click Execute and the response will be shown. 
 
 **Endpoints**  
   
